@@ -5,6 +5,7 @@ import{v2 as cloudinary} from "cloudinary"
 
 import authRouts from "./routes/auth.routs.js";
 import userRouts from "./routes/user.routs.js";
+import postRouts from "./routes/post.routs.js";
 import connectMongoDB from "./db/connectMongoDB.js";
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(cookieParser());
 
 app.use("/api/auth",authRouts);
 app.use("/api/users",userRouts);
+app.use("/api/posts",postRouts);
 
 
 app.get("/",(req,res)=>{

@@ -118,8 +118,8 @@ export const updateUser = async (req,res)=>{
                 return res.status(400).json({error:"Password must be atleast 6 characters long"});
             }
 
-            const salt = await bcrypt.getSalt(10);
-            user.password = await bcrypt.hash(newPassword,salt);
+            const salt = await bcrypt.genSalt(10);
+			user.password = await bcrypt.hash(newPassword, salt);
         }
 
         if(profileImg){
